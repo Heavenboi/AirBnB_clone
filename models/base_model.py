@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
 #!/usr/bin/python3
+
 import models
 from datetime import datetime 
 import uuid
@@ -15,7 +15,7 @@ class BaseModel:
         self.update_at = datetime.now()
 
     def __str__(self):
-        return "[{}] ({}){}".format(self.__class__.__name__, self.id, self.__dict__)
+        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
     def to_dict(self):
         ''' returns a dictionary containing all keys/value of __dict__ of instance '''
         instance_dict = self.__dict__.copy()
