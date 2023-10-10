@@ -19,11 +19,10 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            models.storage.new(self)
         else:
             date_keys = ["created_at", "updated_at"]
             for key in date_keys:
-                kwargs[key] = datetime.strptime(kwargs[key], date_format)
+                kwargs[key] = datetime.strptime(kwargs[key], self.date_format)
 
             for key, val in kwargs.items():
                 if key != '__class__':
@@ -35,11 +34,11 @@ class BaseModel:
         """
         return (f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
 
-    def __repr__(self):
+    #def __repr__(self):
         """
             this will return the string implementation
         """
-        return (f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
+    #    return (f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
 
     def save(self):
         """
