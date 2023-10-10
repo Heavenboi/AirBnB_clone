@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """ our basemodel function. """
 
-import models
 import uuid
 from datetime import datetime
-
+import models
 
 
 class BaseModel:
@@ -35,11 +34,7 @@ class BaseModel:
         """
         return (f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
 
-<<<<<<< HEAD
     #def __repr__(self):
-=======
-   # def __repr__(self):
->>>>>>> 7c2464b (udated the file)
         """
             this will return the string implementation
         """
