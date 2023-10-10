@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" our basemodel function """
+""" our basemodel function. """
 
 import uuid
 from datetime import datetime
