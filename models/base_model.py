@@ -1,17 +1,12 @@
-<<<<<<< HEAD
 #!/usr/bin/env python3
-=======
 #!/usr/bin/python3
 import models
 from datetime import datetime 
 import uuid
->>>>>>> BaseModel
 
 class BaseModel:
     '''class that defines all the common attributes/methods for other classes'''
     def __init__(self):
-<<<<<<< HEAD
-=======
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
@@ -30,10 +25,3 @@ class BaseModel:
         instance_dict['updated_at'] = self.updated_at.isoformat()
 
         return instance_dict
-
-<<<<<<< HEAD
-=======
-if __name__ == '__main__':
-    my_model = BaseModel
->>>>>>> BaseModel
->>>>>>> ae7ba5911540315b3d4696cd991aa8bb1dd6169d
