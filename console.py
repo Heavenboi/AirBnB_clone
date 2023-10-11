@@ -11,11 +11,21 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, args):
         """Quit command to exit the program"""
+        print ('Thank you for using the console')
         return True
 
     def do_EOF(self, args):
         """this will handle end of file"""
+        print("")
         return True
+
+    def emptyline(self):
+        """
+            this make the commandline not to repeate the previous used
+        """
+        pass
+
+
 
     
 if __name__ == '__main__':
