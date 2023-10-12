@@ -2,7 +2,7 @@
 
 **Welcome to AirBnB-clone project, the AirBnB Clone!**
 
-## <p align="center">![alt text](https://github.com/Dikachis/AirBnB_clone/blob/main/web_static/images/65f4a1dd9c51265f49d0.png?raw=true)</p>
+## <p align="center">![alt text](https://github.com/the1Riddle/AirBnB_clone/blob/main/web_static/images/65f4a1dd9c51265f49d0.png?raw=true)</p>
 
 Here's a brief overview:
 
