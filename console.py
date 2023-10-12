@@ -7,7 +7,7 @@ import cmd
 
 class HBNBCommand(cmd.Cmd):
     """the class definition initialization"""
-    prompt = "(hbnb)"
+    prompt = "(hbnb) "
 
     def do_quit(self, args):
         """Quit command to exit the program"""
