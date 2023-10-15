@@ -4,6 +4,7 @@
 import uuid
 from datetime import datetime
 import models
+from models.engine import file_storage
 
 
 class BaseModel:
