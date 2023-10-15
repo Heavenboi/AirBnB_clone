@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 '''
-this is user class
+This is a user class
 '''
 
 from base_model import BaseModel
 
+
 class City(BaseModel):
-	state_id = ""
-	name = ""
+    state_id = ""
+    name = ""

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-    a program that contains the entry point of the command interpreter
+a program that contains the entry point of the command interpreter
 """
 import cmd
 from models import storage
@@ -13,22 +13,25 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, args):
         """Quit command to exit the program"""
-        #print ('Thank you for using the console')
+        """print("Thank you for using the console")"""
         return True
 
     def do_EOF(self, args):
-        """this will handle end of file"""
+        """this will handle the end of file"""
         print("")
         return True
 
     def emptyline(self):
         """
-            this make the commandline not to repeate the previous used
+            this makes the command line not repeat the previously used command
         """
         pass
 
     def do_create(self, args):
-        """Creates a new instance of BaseModel, saves it to the JSON file, and prints the id."""
+        """
+            Creates a new instance of BaseModel, saves it to the JSON file,
+            and prints the id.
+        """
         if not args:
             print("** class name missing **")
             return
@@ -40,7 +43,10 @@ class HBNBCommand(cmd.Cmd):
             print(e)
 
     def do_show(self, args):
-        """Prints the string representation of an instance based on the class name and id."""
+        """
+            Prints the string representation of an instance
+            based on the class name and id.
+        """
         if not args:
             print("** class name missing **")
             return
@@ -58,9 +64,11 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** no instance found **")
 
-
     def do_destroy(self, args):
-        """Deletes an instance based on the class name and id (saves the change into the JSON file)."""
+        """
+            Deletes an instance based on the class name and id
+            (saves the change into the JSON file)
+        """
         if not args:
             print("** class name missing **")
             return
@@ -80,7 +88,10 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, args):
-        """Prints all string representation of all instances based or not on the class name."""
+        """
+            Prints all string representations of all instances
+            based or not on the class name.
+        """
         arg_list = args.split()
         if len(arg_list) == 0 or arg_list[0] == "":
             all_objs = storage.all()
@@ -89,11 +100,15 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             all_objs = storage.all()
-            filtered_objs = [str(obj) for obj in all_objs.values() if obj.__class__.__name__ == arg_list[0]]
+            filtered_objs = [str(obj) for obj in all_objs.values()
+                             if obj.__class__.__name__ == arg_list[0]]
             print(filtered_objs)
 
     def do_update(self, args):
-        """Updates an instance based on the class name and id by adding or updating an attribute."""
+        """
+            Updates an instance based on the class name and
+            id by adding or updating an attribute.
+        """
         if not args:
             print("** class name missing **")
             return
@@ -115,7 +130,6 @@ class HBNBCommand(cmd.Cmd):
         if len(arg_list) < 4:
             print("** value missing **")
             return
-
         attribute_name = arg_list[2]
         attribute_value = arg_list[3]
 
@@ -137,12 +151,6 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** attribute name doesn't exist **")
 
-        
 
-
-
-
-    
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-

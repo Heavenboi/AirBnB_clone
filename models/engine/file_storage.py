@@ -10,6 +10,7 @@ from models.amenity import Amenity
 from models.state import State
 from models.review import Review
 
+
 class_names = {
     "BaseModel": BaseModel,
     "City": City,
@@ -18,7 +19,8 @@ class_names = {
     "Amenity": Amenity,
     "State": State,
     "Review": Review
-} 
+}
+
 
 class FileStorage:
     ''' Private class attribute '''
@@ -36,7 +38,8 @@ class FileStorage:
 
     def save(self):
         """Serializes __objects to the JSON file."""
-        serialized = {key: obj.to_dict() for key, obj in self.__objects.items()}
+        serialized = {key: obj.to_dict() for key,
+                      obj in self.__objects.items()}
         with open(self.__file_path, "w") as file:
             json.dump(serialized, file)
 
@@ -56,5 +59,4 @@ class FileStorage:
                         obj = class_definition(**value)
                         FileStorage.__objects[obj_key] = obj
         except FileNotFoundError:
-            pass    
-
+            pass

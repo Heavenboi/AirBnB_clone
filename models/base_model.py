@@ -36,7 +36,7 @@ class BaseModel:
         """
         return (f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}")
 
-    #def __repr__(self):
+    def __repr__(self):
         """
             this will return the string implementation
         """
@@ -59,4 +59,3 @@ class BaseModel:
         obj_to_dict['updated_at'] = self.created_at.strftime(self.date_format)
 
         return (obj_to_dict)
-
