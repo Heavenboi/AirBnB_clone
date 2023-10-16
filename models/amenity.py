@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-this is user class
+this is amenity class
 '''
 
 from models.base_model import BaseModel
