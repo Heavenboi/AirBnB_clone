@@ -21,6 +21,7 @@ class_names = {
     "Review": Review
     }
 
+
 class FileStorage:
     ''' Private class attribute '''
     __file_path = "file.json"

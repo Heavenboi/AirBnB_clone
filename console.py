@@ -23,6 +23,7 @@ class_names = {
     'Review': Review
 }
 
+
 class HBNBCommand(cmd.Cmd):
     """the class definition initialization"""
     prompt = "(hbnb) "
