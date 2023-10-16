@@ -6,7 +6,7 @@ import time
 
 
 class TestBaseModel(unittest.TestCase):
-
+    """some comments"""
 
     def test_to_dict(self):
         my_model = BaseModel()
@@ -41,7 +41,6 @@ class TestBaseModel(unittest.TestCase):
     def test_args(self):
         base5 = BaseModel(None)
         self.assertNotIn(None, base5._dict_.values())
-
 
 
 if _name_ == "_main_":
