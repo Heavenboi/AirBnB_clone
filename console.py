@@ -1,11 +1,27 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 a program that contains the entry point of the command interpreter
 """
 import cmd
 from models import storage
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
 
+""" Create a dictionary mapping class names to class objects """
+class_names = {
+    'BaseModel': BaseModel,
+    'User': User,
+    'State': State,
+    'Amenity': Amenity,
+    'City': City,
+    'Place': Place,
+    'Review': Review
+}
 
 class HBNBCommand(cmd.Cmd):
     """the class definition initialization"""

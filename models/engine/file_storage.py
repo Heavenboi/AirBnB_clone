@@ -11,7 +11,7 @@ from models.state import State
 from models.review import Review
 
 
-class_names = {
+"""class_names = {
     "BaseModel": BaseModel,
     "City": City,
     "User": User,
@@ -19,7 +19,7 @@ class_names = {
     "Amenity": Amenity,
     "State": State,
     "Review": Review
-}
+}"""
 
 
 class FileStorage:
