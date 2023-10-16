@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
+
 import unittest
 from models.base_model import BaseModel
 import time
+
 
 class TestBaseModel(unittest.TestCase):
 
