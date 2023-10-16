@@ -43,5 +43,5 @@ class TestBaseModel(unittest.TestCase):
         self.assertNotIn(None, base5._dict_.values())
 
 
-if _name_ == "_main_":
-    unittest.main()
+"""if _name_ == "_main_":
+    unittest.main()"""
