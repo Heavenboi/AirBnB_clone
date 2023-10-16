@@ -3,7 +3,7 @@
 import json
 import models
 from models.base_model import BaseModel
-from models.city import City
+"""from models.city import City
 from models.user import User
 from models.place import Place
 from models.amenity import Amenity
@@ -18,7 +18,7 @@ class_names = {
     "Amenity": Amenity,
     "State": State,
     "Review": Review
-} 
+    } """
 
 class FileStorage:
     ''' Private class attribute '''
