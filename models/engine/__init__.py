@@ -2,4 +2,4 @@
 """
     initializes the package
 """
-from models import *
+"""from models import *"""

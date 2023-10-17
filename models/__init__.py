@@ -2,7 +2,7 @@
 """
     __init__ for models directory
 """
-from models.engine import file_storage
+from AirBnB_clone.models.engine import file_storage
 
 
 storage = file_storage.FileStorage()

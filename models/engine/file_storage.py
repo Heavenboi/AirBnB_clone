@@ -2,6 +2,25 @@
 
 from datetime import datetime
 import json
+import os
+from base_model import BaseModel
+from user import User
+from place import Place
+from state import State
+from city import City
+from amenity import Amenity
+from review import Review
+
+class_dict = {
+    "BaseModel": BaseModel,
+    "User": User,
+    "Place": Place,
+    "Amenity": Amenity,
+    "City": City,
+    "Review": Review,
+    "State": State
+}
+
 
 class FileStorage:
     ''' Private class attribute '''
