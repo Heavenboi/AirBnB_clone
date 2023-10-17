@@ -3,7 +3,7 @@
 this is user class
 '''
 
-from base_model import BaseModel
+from models.base_model import BaseModel
 
 class Place(BaseModel):
 	city_id = ""
