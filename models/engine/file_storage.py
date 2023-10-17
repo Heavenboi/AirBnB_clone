@@ -3,6 +3,7 @@
 from datetime import datetime
 import json
 
+
 class FileStorage:
     ''' Private class attribute '''
     __file_path = "file.json"
