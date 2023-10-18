@@ -1,24 +1,7 @@
 #!/usr/bin/python3
 
 import json
-import models
-from models.base_model import BaseModel
-"""from models.city import City
-from models.user import User
-from models.place import Place
-from models.amenity import Amenity
-from models.state import State
-from models.review import Review
 
-class_names = {
-    "BaseModel": BaseModel,
-    "City": City,
-    "User": User,
-    "Place": Place,
-    "Amenity": Amenity,
-    "State": State,
-    "Review": Review
-    } """
 
 class FileStorage:
     ''' Private class attribute '''

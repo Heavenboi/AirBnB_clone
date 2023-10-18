@@ -4,7 +4,7 @@ implements the cmd.Cmd class
 """
 
 import cmd
-import models
+from models import *
 from models.user import User
 from models.base_model import BaseModel
 from models.user import User
