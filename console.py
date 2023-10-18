@@ -14,18 +14,19 @@ from models.review import Review
 
 """ Create a dictionary mapping class names to class objects """
 class_names = {
-    'BaseModel': BaseModel,
-    'User': User,
-    'State': State,
-    'Amenity': Amenity,
-    'City': City,
-    'Place': Place,
-    'Review': Review
+    "BaseModel": BaseModel,
+    "User": User,
+    "State": State,
+    "Amenity": Amenity,
+    "City": City,
+    "Place": Place,
+    "Review": Review,
 }
 
 
 class HBNBCommand(cmd.Cmd):
     """the class definition initialization"""
+
     prompt = "(hbnb) "
 
     def do_quit(self, args):
@@ -40,20 +41,23 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         """
-            this makes the command line not repeat the previously used command
+        this makes the command line not repeat the previously used command
         """
         pass
 
     def do_create(self, args):
         """
-            Creates a new instance of BaseModel, saves it to the JSON file,
-            and prints the id.
+        Creates a new instance of BaseModel, saves it to the JSON file,
+        and prints the id.
         """
         if not args:
             print("** class name missing **")
             return
+        if args not in class_names:
+            print("** class does not exist **")
+            return
         try:
-            new_instance = BaseModel()
+            new_instance = class_names[args]()
             new_instance.save()
             print(new_instance.id)
         except Exception as e:
@@ -61,14 +65,14 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, args):
         """
-            Prints the string representation of an instance
-            based on the class name and id.
+        Prints the string representation of an instance
+        based on the class name and id.
         """
         if not args:
             print("** class name missing **")
             return
         arg_list = args.split()
-        if arg_list[0] not in ["BaseModel"]:
+        if arg_list[0] not in class_names:
             print("** class doesn't exist **")
             return
         if len(arg_list) < 2:
@@ -83,14 +87,14 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, args):
         """
-            Deletes an instance based on the class name and id
-            (saves the change into the JSON file)
+        Deletes an instance based on the class name and id
+        (saves the change into the JSON file)
         """
         if not args:
             print("** class name missing **")
             return
         arg_list = args.split()
-        if arg_list[0] not in ["BaseModel"]:
+        if arg_list[0] not in class_names:
             print("** class doesn't exist **")
             return
         if len(arg_list) < 2:
@@ -106,8 +110,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, args):
         """
-            Prints all string representations of all instances
-            based or not on the class name.
+        Prints all string representations of all instances
+        based or not on the class name.
         """
         arg_list = args.split()
         if len(arg_list) == 0 or arg_list[0] == "":
@@ -117,14 +121,17 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             all_objs = storage.all()
-            filtered_objs = [str(obj) for obj in all_objs.values()
-                             if obj.__class__.__name__ == arg_list[0]]
+            filtered_objs = [
+                str(obj)
+                for obj in all_objs.values()
+                if obj.__class__.__name__ == arg_list[0]
+            ]
             print(filtered_objs)
 
     def do_update(self, args):
         """
-            Updates an instance based on the class name and
-            id by adding or updating an attribute.
+        Updates an instance based on the class name and
+        id by adding or updating an attribute.
         """
         if not args:
             print("** class name missing **")
@@ -155,7 +162,7 @@ class HBNBCommand(cmd.Cmd):
         """
         if hasattr(all_objs[obj_key], attribute_name):
             """
-                Cast the attribute value to the appropriate type
+            Cast the attribute value to the appropriate type
             """
             if hasattr(all_objs[obj_key], attribute_name):
                 attr_type = type(getattr(all_objs[obj_key], attribute_name))
@@ -169,5 +176,5 @@ class HBNBCommand(cmd.Cmd):
             print("** attribute name doesn't exist **")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HBNBCommand().cmdloop()
